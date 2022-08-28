@@ -32,7 +32,7 @@ const style = {
   }
 }
 function Clip(props) {
-  const duration = (new Timecode(props.clip.end, props.clip.standard)).subtract(new Timecode(props.clip.start, props.clip.standard))
+  const duration = Timecode.duration(props.clip.start, props.clip.end, props.clip.standard)
   const isEmpty = !props.standard && !props.definition
   const isValid = isEmpty || (props.clip.standard === props.standard && props.clip.definition === props.definition)
 
