@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.93a0497a.css",
-    "main.js": "/static/js/main.a72c5dfd.js",
-    "index.html": "/index.html",
-    "main.93a0497a.css.map": "/static/css/main.93a0497a.css.map",
-    "main.a72c5dfd.js.map": "/static/js/main.a72c5dfd.js.map"
+    "main.css": "/telepathylab/static/css/main.93a0497a.css",
+    "main.js": "/telepathylab/static/js/main.a72c5dfd.js",
+    "index.html": "/telepathylab/index.html",
+    "main.93a0497a.css.map": "/telepathylab/static/css/main.93a0497a.css.map",
+    "main.a72c5dfd.js.map": "/telepathylab/static/js/main.a72c5dfd.js.map"
   },
   "entrypoints": [
     "static/css/main.93a0497a.css",
