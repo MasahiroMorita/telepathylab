@@ -48,7 +48,7 @@ function Reel(props) {
     <div>
       <Paper sx={style.paper} elevation={0}>
         {!editMode &&
-          <h3>
+          <h3 onClick={toggleEditMode}>
             {name}
             <IconButton onClick={toggleEditMode}><EditIcon /></IconButton>
           </h3>
@@ -57,7 +57,7 @@ function Reel(props) {
           <FormControl variant="standard" fullWidth sx={style.formControl}>
             <InputLabel htmlFor="input-field">Reel Name</InputLabel>
             <Input id="input-field" size="small" autoFocus
-              value={name} onChange={onChangeName} onKeyPress={onKeyPress}
+              value={name} onChange={onChangeName} onKeyPress={onKeyPress} onBlur={toggleEditMode}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton onClick={toggleEditMode} >
