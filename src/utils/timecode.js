@@ -28,6 +28,13 @@ export class Timecode {
     this.standard = standard // standard must be either 'PAL' or 'NTSC'.
   }
 
+  static duration(start, end, standard) {
+    // calculate duration between start and end
+    let start_code = new Timecode(start, standard)
+    let end_code = new Timecode(end, standard)
+    return end_code.subtract(start_code, standard)
+  }
+
   toString() { // convert to string format.
     return `${this.hours}:${toIntString(this.minutes)}:${toIntString(this.seconds)}:${toIntString(this.frames)}`
   }

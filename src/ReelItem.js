@@ -30,7 +30,7 @@ const style = {
 }
 
 function ReelItem(props) {
-  const duration = (new Timecode(props.item.end, props.item.standard)).subtract(new Timecode(props.item.start, props.item.standard))
+  const duration = Timecode.duration(props.item.start, props.item.end, props.item.standard)
   return (
     <Paper style={style.paper}>
       <ItemMedia src={props.item.thumbnail_url} />

@@ -25,6 +25,10 @@ describe('Timecode', ()=> {
     expect(timecode.frames).toEqual(12)
   })
 
+  it('duration', ()=> {
+    expect(Timecode.duration('0:20:10:10', '0:21:00:05', 'PAL').toString()).toEqual('0:00:49:20')
+  })
+
   it('toString timecode', ()=> {
     let timecode = new Timecode('11:22:33:12', 'PAL')
     expect(timecode.toString()).toEqual('11:22:33:12')
