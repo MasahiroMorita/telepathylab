@@ -34,7 +34,7 @@ const style = {
 function Clip(props) {
   const duration = (new Timecode(props.clip.end, props.clip.standard)).subtract(new Timecode(props.clip.start, props.clip.standard))
   const isEmpty = !props.standard && !props.definition
-  const isValid = isEmpty || props.clip.standard == props.standard && props.clip.definition == props.definition
+  const isValid = isEmpty || (props.clip.standard === props.standard && props.clip.definition === props.definition)
 
   return (
     <Paper style={isValid ? style.paperValid : style.paperInvalid} onClick={()=> isValid && props.onAddItem(props.clip)}>
@@ -44,7 +44,7 @@ function Clip(props) {
       <div style={style.detail}>
         <AccessTimeIcon style={style.icon}/>{duration.toString()}&nbsp;&nbsp;&nbsp;
         <SettingsInputSvideoIcon style={style.icon} />{props.clip.standard}&nbsp;&nbsp;&nbsp;
-        {props.clip.definition == 'HD' && <HDIcon />}
+        {props.clip.definition === 'HD' ? <HDIcon /> : null}
       </div>
     </Paper>
   )

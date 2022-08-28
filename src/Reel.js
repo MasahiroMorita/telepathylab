@@ -1,4 +1,3 @@
-import { useState, useCallback } from 'react'
 import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
@@ -47,13 +46,7 @@ function Reel(props) {
   return (
     <div>
       <Paper sx={style.paper} elevation={0}>
-        {!editMode &&
-          <h3 onClick={toggleEditMode}>
-            {name}
-            <IconButton onClick={toggleEditMode}><EditIcon /></IconButton>
-          </h3>
-        }
-        {editMode && 
+        {editMode ?
           <FormControl variant="standard" fullWidth sx={style.formControl}>
             <InputLabel htmlFor="input-field">Reel Name</InputLabel>
             <Input id="input-field" size="small" autoFocus
@@ -66,10 +59,15 @@ function Reel(props) {
                 </InputAdornment>
               } />
           </FormControl>
+          :
+          <h3 onClick={toggleEditMode}>
+            {name}
+            <IconButton onClick={toggleEditMode}><EditIcon /></IconButton>
+          </h3>
         }
-        <AccessTimeIcon style={style.icon} />{duration && duration.toString() || '0:00:00:00'}&nbsp;&nbsp;&nbsp;
-        {standard && <span><SettingsInputSvideoIcon style={style.icon} />{standard}&nbsp;&nbsp;&nbsp;</span>}
-        {definition === 'HD' && <HDIcon />}
+        <AccessTimeIcon style={style.icon} />{duration ? duration.toString() : '0:00:00:00'}&nbsp;&nbsp;&nbsp;
+        {standard ? <span><SettingsInputSvideoIcon style={style.icon} />{standard}&nbsp;&nbsp;&nbsp;</span> : null}
+        {definition === 'HD' ? <HDIcon /> : null}
       </Paper>
       <Stack spacing={1}>
         {items.map((item, i)=> {
