@@ -38,7 +38,7 @@ function Clip(props) {
 
   return (
     <Paper style={isValid ? style.paperValid : style.paperInvalid} onClick={()=> isValid && props.onAddItem(props.clip)}>
-      <ItemMedia src={props.clip.thumbnail_url} />
+      <ItemMedia src={props.clip.thumbnail_url} alt={props.clip.name} />
       <h3 style={style.h3}>{props.clip.name}</h3>
       <div style={style.description}>{props.clip.description}</div>
       <div style={style.detail}>

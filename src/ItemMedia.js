@@ -7,7 +7,7 @@ const style = {
 }
 
 function ItemMedia(props) {
-  return <img src={props.src} style={style} />
+  return <img src={props.src} style={style} alt={props.alt} />
 }
 
 export default ItemMedia

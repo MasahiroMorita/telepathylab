@@ -33,7 +33,7 @@ function ReelItem(props) {
   const duration = Timecode.duration(props.item.start, props.item.end, props.item.standard)
   return (
     <Paper style={style.paper}>
-      <ItemMedia src={props.item.thumbnail_url} />
+      <ItemMedia src={props.item.thumbnail_url} alt={props.item.name} />
       <IconButton variant="outline" onClick={()=> props.onRemoveItem(props.index)} style={style.iconButton}>
         <DeleteIcon />
       </IconButton>
